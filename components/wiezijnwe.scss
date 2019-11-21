@@ -1,0 +1,39 @@
+.wiezijnwe {
+    margin-top: -100px;
+    margin-bottom: 70px;
+    .square {
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        margin: auto;
+        background-color: #ffffff;
+        box-shadow: 0 0 46px 4px rgba(154, 154, 154, 0.5);
+        // div {
+        //     width: 50%;
+        // }
+        .text {
+            .title {
+                font-family: BrandonGrotesque_Light;
+                font-size: 2.3em;
+                margin: 20px;
+                margin-bottom: 30px;
+                color: #565b73;
+                text-align: center;
+            }
+            font-family: BrandonGrotesque_Thin;
+            font-size: 1.4em;
+            margin: 40px;
+            color: #565b73;
+            text-align: center;
+            padding-bottom: 80px;
+            width: 50%;
+            line-height: 35px;
+        }
+        .foto {
+            width: 50%;
+            background-origin: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+}

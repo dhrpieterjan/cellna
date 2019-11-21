@@ -1,0 +1,33 @@
+.header {
+  //background-color: beige;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 15px;
+  .logo {
+    height: 100px;
+  }
+  .nav {
+    display: flex;
+    //background-color: khaki;
+
+    .link {
+      font-family: "Brandon Grotesque Regular";
+      padding: 5px;
+      margin: 5px;
+      text-decoration: none;
+      color: #3c4146;
+      //background-image: linear-gradient(to right, #7e0000 50%, #3c4146 50%);
+      border-bottom: 2px solid white;
+      background-position: -100%;
+      background-size: 200%;
+      transition: all 0.4s;
+
+      &:hover {
+        border-bottom: 2px solid #3c4146;
+        background-position: 100%;
+      }
+    }
+  }
+}

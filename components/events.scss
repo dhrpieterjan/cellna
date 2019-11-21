@@ -1,0 +1,24 @@
+.events {
+    margin-top: 30px;
+    color: white;
+    padding: 10px;
+    > h3 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .info {
+        display: flex;
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin-right: 20px;
+            background-size: cover;
+            background-position: center;
+            background-color: lightblue;
+        }
+        p {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+}

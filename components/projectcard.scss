@@ -1,0 +1,81 @@
+.projectcard {
+    width: calc((100% - 300px) / 3);
+    background: #ffffff;
+    border: 1px solid #979797;
+    box-shadow: 0 0 53px -16px rgba(117, 117, 117, 0.5);
+    font-family: BrandonGrotesque_Light;
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #484b5a;
+
+    .foto {
+        height: 200px;
+        max-height: 200px;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        background-color: darkcyan;
+        .aantalverkocht {
+            margin: 0px;
+            padding: 5px 20px;
+            border-radius: 20px;
+            background-color: #29a1af;
+            font-family: BrandonGrotesque_Bold;
+            font-size: 16px;
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    }
+
+    .info {
+        font-family: BrandonGrotesque_Light;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        .projectname {
+            display: inline-block;
+            width: auto;
+            padding-bottom: 5px;
+            margin: 10px;
+            border-bottom: solid 1px lightgray;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            margin-left: 10px;
+            align-items: center;
+            .glymp {
+                width: 20px;
+                height: 20px;
+            }
+
+            p {
+                font-size: 0.8em;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+// background: #d8d8d8;
+// font-family: BrandonGrotesque-Medium;
+// font-size: 20px;
+// color: #484b5a;
+// font-family: BrandonGrotesque-Medium;
+// font-size: 20px;
+// color: #484b5a;
+// font-family: BrandonGrotesque-Medium;
+// font-size: 20px;
+// color: #484b5a;
+// font-family: BrandonGrotesque-Medium;
+// font-size: 20px;
+// color: #484b5a;
+
+// font-family: BrandonGrotesque-Medium;
+// font-size: 20px;
+// color: #484b5a;
+// text-align: center;
