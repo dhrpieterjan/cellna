@@ -3,7 +3,7 @@ import Container from "../components/container";
 import Projectcard from "../components/projectcard";
 
 export default function Projecten(props) {
-    console.log(props);
+    //console.log(props);
     return (
         <div>
             <Container color="#F3F5F6">

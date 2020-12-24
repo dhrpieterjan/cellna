@@ -1,0 +1,28 @@
+.footer {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  .linken {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: BrandonGrotesque_Light;
+
+    .link {
+      color: black;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        width: 1.5em;
+        padding-right: 10px;
+      }
+    }
+  }
+  .subtext {
+    font-family: BrandonGrotesque_Light;
+
+    margin: 20px;
+  }
+}

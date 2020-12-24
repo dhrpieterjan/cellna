@@ -1,22 +1,36 @@
+@import "../static/_vars.scss";
+
 .investeren {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 60px;
-    .title {
-        font-family: BrandonGrotesque_Light;
-        font-size: 2.3em;
-        margin: 30px;
-        margin-bottom: 15px;
-        color: #565b73;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+  .title {
+    font-family: BrandonGrotesque_Light;
+    font-size: 1.4em;
+    margin: 30px;
+    @media #{$Small} {
+      font-size: 2.3em;
+      margin: 30px;
     }
-    .text {
-        font-family: BrandonGrotesque_Thin;
-        font-size: 1.4em;
-        color: #565b73;
-        text-align: center;
-        width: 50%;
-        line-height: 35px;
-        margin-bottom: 20px;
+
+    margin-bottom: 15px;
+    color: #565b73;
+  }
+  .text {
+    font-family: BrandonGrotesque_Light;
+    font-size: 1.2em;
+    color: #565b73;
+    text-align: center;
+    width: 80%;
+    line-height: 25px;
+    margin-bottom: 20px;
+
+    @media #{$Small} {
+      font-family: BrandonGrotesque_Thin;
+      font-size: 1.4em;
+      width: 70%;
+      line-height: 35px;
     }
+  }
 }

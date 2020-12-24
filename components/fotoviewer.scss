@@ -1,0 +1,51 @@
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+@import "../static/_vars.scss";
+.fv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  .title {
+    font-family: BrandonGrotesque_Light;
+    font-size: 1.4em;
+    margin: 30px;
+    margin-bottom: 15px;
+    color: #565b73;
+    text-align: center;
+  }
+
+  .bollen {
+    margin-top: 0px;
+    height: 50px;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    @media #{$Small} {
+      width: 800px;
+      max-width: 800px;
+      height: 150px;
+    }
+    .sub {
+      font-family: BrandonGrotesque_Light;
+      font-size: 1.4em;
+      color: #484b5a;
+      text-align: center;
+      @media #{$Small} {
+        font-size: 2.3em;
+      }
+    }
+  }
+  .image-gallery {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-gallery-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: center center;
+  }
+}

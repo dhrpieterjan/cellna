@@ -1,5 +1,8 @@
 import Header from "./Header";
 import "../components/layout.scss";
+import Formulier from "../components/formulier";
+import Footer from "../components/Footer";
+
 
 const Layout = props => (
     <div>
@@ -7,7 +10,10 @@ const Layout = props => (
             <Header />
         </div>
         {props.children}
-    </div>
+
+        <Formulier />
+        <Footer />
+    </div >
 );
 
 export default Layout;

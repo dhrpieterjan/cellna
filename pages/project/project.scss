@@ -1,0 +1,120 @@
+@import "../../static/_vars.scss";
+
+.projectInfo {
+  margin: 10px;
+  padding: 10px;
+  padding-top: 50px;
+  @media #{$Small} {
+    margin: 20px;
+    padding: 50px;
+  }
+  .projectNaam {
+    display: block;
+    position: absolute;
+    float: left;
+    margin-top: -40px;
+    margin-left: 10px;
+    color: white;
+    font-size: 1.4em;
+    padding: 20px;
+    background-color: #172330;
+    @media #{$Small} {
+      font-size: 2.4em;
+      margin-left: 80px;
+      padding-left: 50px;
+      padding-right: 150px;
+    }
+  }
+
+  .project {
+    //padding: 60px;
+    box-shadow: 0 0 46px 4px rgba(154, 154, 154, 0.5);
+    display: flex;
+    flex-direction: column;
+    @media #{$Medium} {
+      flex-direction: row;
+    }
+    .projcetText {
+      padding: 20px;
+      padding-top: 40px;
+      font-family: BrandonGrotesque_Light;
+      font-size: 1.3em;
+      color: #565b73;
+      padding-right: 20px;
+      line-height: 1.5em;
+      @media #{$Small} {
+        padding: 60px;
+      }
+
+      @media #{$Medium} {
+        max-width: 60%;
+        min-width: 60%;
+      }
+    }
+    .projectSpecs {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+      background-color: #f3f5f6;
+      .verk {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px 20px;
+        border-radius: 20px;
+        background-color: #29a1af;
+        font-family: BrandonGrotesque_Bold;
+        font-size: 16px;
+        color: #ffffff;
+        text-align: center;
+      }
+      .spec {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        .row {
+          display: flex;
+          padding: 5px;
+          .glymp {
+            padding-right: 10px;
+            height: 15px;
+          }
+        }
+      }
+      .kaart {
+        display: none;
+        h3 {
+          padding: 20px;
+        }
+        .kaartje {
+          height: 200px;
+          background-color: lightblue;
+        }
+        @media #{$Small} {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.table {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: #3c4146;
+  color: white;
+  padding: 30px;
+  margin-bottom: 50px;
+  * {
+    color: white !important;
+  }
+  table {
+    width: 100%;
+  }
+  .prijsInfoImg {
+    max-width: 100%;
+  }
+}

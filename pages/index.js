@@ -11,6 +11,8 @@ import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import Wiezijnwe from "../components/wiezijnwe";
 import Investeren from "../components/investeren";
+import FotoViewer from "../components/fotoviewer";
+
 
 const GET_HOMEPAGE = gql`
     {
@@ -57,33 +59,30 @@ export default function Index() {
     if (loading) return <div>Loading</div>;
 
     const homepage = data.homepages[0];
+
     const event = homepage.event;
+
     const projects = data.projects;
     const wiezijnwe = homepage.Wiezijnwe;
     const Wiezijnwefoto = homepage.Wiezijnwefoto;
     const Waarominvestereninvastgoed = homepage.Waarominvestereninvastgoed;
     const Bouwgrondtekoop = homepage.Bouwgrondtekoop;
-    console.log(wiezijnwe);
+    const fotogallerij = homepage.fotogallerij;
 
     return (
         <Layout>
             <Container color="#3C4146">
-                <Events
+                {event && <Events
                     naam={event.Eventnaam}
                     datum={event.Subtitel}
                     uur={event.Subtitel2}
-                    img="/static/imagedummy.png"></Events>
-            </Container>
-            {/* <Projecten projecten={projects}></Projecten> */}
+                    img="/static/imagedummy.png"></Events>}
 
-            <Container color="white">
-                <Investeren
-                    titel={"Deze website is in volle opbouw."}
-                    text={"Verdere info volgt."}
-                />
             </Container>
+            <Projecten projecten={projects}></Projecten>
+
             <Container color="#3C4146" minHeight="200px"></Container>
-            <Wiezijnwe detext={wiezijnwe} foto={Wiezijnwefoto.url} />
+            <Wiezijnwe detext={wiezijnwe} foto={Wiezijnwefoto.url} id="wzw" />
             <Container color="#F3F5F6">
                 <Investeren
                     titel={"Waarom investeren in vastgoed?"}
@@ -91,7 +90,10 @@ export default function Index() {
                 />
             </Container>
 
-            {/* Hier komt de foto viewer */}
+            <Container>
+                <FotoViewer fotos={fotogallerij}>
+                </FotoViewer>
+            </Container>
 
             <Container color="#3C4146">
                 <Investeren
@@ -101,7 +103,6 @@ export default function Index() {
                 />
             </Container>
 
-            {/* Hier komt het formulier */}
         </Layout>
     );
 }

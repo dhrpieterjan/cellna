@@ -3,7 +3,7 @@ import { prototype } from "events";
 
 export default function Investeren(props) {
     return (
-        <div className="investeren">
+        <div className="investeren" id="wiiv" >
             <h3 className="title" style={{ color: props.textcolor }}>
                 {props.titel}
             </h3>

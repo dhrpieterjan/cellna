@@ -1,3 +1,26 @@
+@import "../static/_vars.scss";
+/*
+// (min-width: 1281px)
+@media #{$ExtraLarge} {
+}
+// (min-width: 1025px) and (max-width: 1280px)
+@media #{$Large} {
+}
+//(min-width: 768px) and (max-width: 1024px)
+@media #{$Medium} {
+}
+// (min-width: 768px) and (max-width: 1024px) and (orientation: landscape)
+@media #{$Small} {
+}
+// (min-width: 481px) and (max-width: 767px)
+@media #{$LowResLandscape} {
+}
+// (min-width: 320px) and (max-width: 480px)
+@media #{$Smartphone} {
+}
+
+*/
+
 .projectwrapper {
     margin-top: 20px;
 
@@ -6,54 +29,83 @@
     align-items: center;
     .titel {
         font-family: "BrandonGrotesque_Light";
-        margin-top: 30px;
-        margin-bottom: 20px;
-        font-size: 3em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 2em;
         color: #565b73;
         text-align: center;
+        //(min-width: 768px) and (max-width: 1024px)
+        @media #{$Medium} {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 3em;
+        }
     }
     .subTitel {
         font-family: "BrandonGrotesque_Light_Italic";
-        font-size: 1.3em;
+        font-size: 0.8em;
         color: #565b73;
         margin-bottom: 200px;
         text-align: center;
+        @media #{$Medium} {
+            font-size: 1.3em;
+            margin-bottom: 200px;
+        }
     }
 }
 
 .bollen {
-    width: 800px;
+    width: auto;
     max-width: 800px;
     margin-top: -180px;
     height: 200px;
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
+    @media #{$Medium} {
+        width: 800px;
+        max-width: 800px;
+        margin-top: -180px;
+        height: 200px;
+    }
     .sub {
         font-family: BrandonGrotesque_Bold;
-        font-size: 1.7em;
+        font-size: 1em;
         color: #484b5a;
-        padding: 30px;
+        padding: 10px;
         text-align: center;
+        @media #{$Medium} {
+            font-size: 1.7em;
+            padding: 30px;
+        }
     }
 }
 
 .actieveprojecten {
-    margin-top: -100px;
+    margin-top: -150px;
     display: flex;
-    flex-direction: row;
-    align-items: top;
-    flex-wrap: wrap;
-    flex-basis: 30%;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
+    @media #{$Small} {
+        margin-top: -100px;
+        flex-direction: row;
+        flex-basis: 30%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
 
 .sub {
     font-family: BrandonGrotesque_Bold;
-    font-size: 1.7em;
+    font-size: 1em;
     color: #484b5a;
-    padding: 30px;
+    padding: 10px;
     text-align: center;
+    @media #{$Medium} {
+        font-size: 1.7em;
+        padding: 30px;
+    }
 }
 
 .sub2 {
@@ -62,9 +114,13 @@
 
 .opgeleverderprojecten {
     display: flex;
-    flex-direction: row;
-    align-items: top;
-    flex-wrap: wrap;
-    flex-basis: 30%;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media #{$Medium} {
+        flex-direction: row;
+        flex-basis: 30%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }

@@ -1,5 +1,29 @@
+@import "../static/_vars.scss";
+/*
+// (min-width: 1281px)
+@media #{$ExtraLarge} {
+}
+// (min-width: 1025px) and (max-width: 1280px)
+@media #{$Large} {
+}
+//(min-width: 768px) and (max-width: 1024px)
+@media #{$Medium} {
+}
+// (min-width: 768px) and (max-width: 1024px) and (orientation: landscape)
+@media #{$Small} {
+}
+// (min-width: 481px) and (max-width: 767px)
+@media #{$LowResLandscape} {
+}
+// (min-width: 320px) and (max-width: 480px)
+@media #{$Smartphone} {
+}
+
+*/
+
 .projectcard {
-    width: calc((100% - 300px) / 3);
+    margin: 10px;
+    max-width: 380px;
     background: #ffffff;
     border: 1px solid #979797;
     box-shadow: 0 0 53px -16px rgba(117, 117, 117, 0.5);
@@ -7,10 +31,19 @@
     font-size: 20px;
     margin-bottom: 30px;
     color: #484b5a;
+    min-height: 400px;
+    min-width: 320px;
+    @media #{$Medium} {
+        width: calc((100% - 300px) / 3);
+    }
+
+    :hover {
+        cursor: pointer;
+    }
 
     .foto {
         height: 200px;
-        max-height: 200px;
+        min-height: 200px;
         background-position: center;
         background-size: cover;
         position: relative;

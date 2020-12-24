@@ -1,39 +1,63 @@
+@import "../static/_vars.scss";
+
 .wiezijnwe {
-    margin-top: -100px;
-    margin-bottom: 70px;
-    .square {
-        display: flex;
-        flex-direction: row;
-        width: 60%;
-        margin: auto;
-        background-color: #ffffff;
-        box-shadow: 0 0 46px 4px rgba(154, 154, 154, 0.5);
-        // div {
-        //     width: 50%;
-        // }
-        .text {
-            .title {
-                font-family: BrandonGrotesque_Light;
-                font-size: 2.3em;
-                margin: 20px;
-                margin-bottom: 30px;
-                color: #565b73;
-                text-align: center;
-            }
-            font-family: BrandonGrotesque_Thin;
-            font-size: 1.4em;
-            margin: 40px;
-            color: #565b73;
-            text-align: center;
-            padding-bottom: 80px;
-            width: 50%;
-            line-height: 35px;
-        }
-        .foto {
-            width: 50%;
-            background-origin: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+  margin-top: -100px;
+  margin-bottom: 70px;
+
+  .square {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+
+    @media #{$Medium} {
+      width: 80%;
+      min-height: 800px;
     }
+
+    @media #{$Large} {
+      width: 60%;
+    }
+    margin: auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 46px 4px rgba(154, 154, 154, 0.5);
+    // div {
+    //     width: 50%;
+    // }
+    .text {
+      .title {
+        font-family: BrandonGrotesque_Light;
+        @media #{$Medium} {
+          font-size: 2.3em;
+        }
+        margin: 20px;
+        margin-bottom: 30px;
+        color: #565b73;
+        text-align: center;
+      }
+      font-family: BrandonGrotesque_Light;
+      font-size: 1.2em;
+      margin: 20px;
+      color: #565b73;
+      text-align: center;
+      padding-bottom: 80px;
+      line-height: 25px;
+      @media #{$Small} {
+        font-family: BrandonGrotesque_Thin;
+        width: 50%;
+        font-size: 1.4em;
+        line-height: 35px;
+        margin: 40px;
+      }
+    }
+    .foto {
+      display: none;
+      @media #{$Small} {
+        display: block;
+        width: 50%;
+      }
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
 }
