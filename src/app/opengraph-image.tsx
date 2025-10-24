@@ -66,114 +66,20 @@ export default async function Image() {
       (
         <div
           style={{
-            width: '100%',
-            height: '100%',
+            fontSize: 64,
             background: `linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%), url(${projectImageUrl})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            width: '100%',
+            height: '100%',
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-end',
+            alignItems: 'flex-end',
+            justifyContent: 'flex-start',
             padding: '60px',
             color: 'white',
           }}
         >
-          {/* Project name - matches the h1 styling */}
-          <div
-            style={{
-              fontSize: 64,
-              fontWeight: 'bold',
-              marginBottom: 24,
-              lineHeight: 1.1,
-              maxWidth: '90%',
-            }}
-          >
-            {featuredProject.Naam}
-          </div>
-          
-          {/* Tags row - matches the actual header design */}
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '12px',
-              marginBottom: 16,
-            }}
-          >
-            {featuredProject.Aantalverkocht > 0 && (
-              <div
-                style={{
-                  background: 'rgba(239, 68, 68, 1)',
-                  color: 'white',
-                  padding: '8px 16px',
-                  borderRadius: '20px',
-                  fontSize: 16,
-                  fontWeight: 'bold',
-                }}
-              >
-                {featuredProject.Aantalverkocht} verkocht
-              </div>
-            )}
-            {featuredProject.Fase && (
-              <div
-                style={{
-                  background: 'rgba(255, 255, 255, 0.2)',
-                  color: 'white',
-                  padding: '8px 16px',
-                  borderRadius: '20px',
-                  fontSize: 16,
-                  fontWeight: 'bold',
-                  backdropFilter: 'blur(10px)',
-                }}
-              >
-                {featuredProject.Fase}
-              </div>
-            )}
-            {featuredProject.Locatie && (
-              <div
-                style={{
-                  background: 'rgba(255, 255, 255, 0.2)',
-                  color: 'white',
-                  padding: '8px 16px',
-                  borderRadius: '20px',
-                  fontSize: 16,
-                  fontWeight: 'bold',
-                  backdropFilter: 'blur(10px)',
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-              >
-                📍 {featuredProject.Locatie}
-              </div>
-            )}
-            {featuredProject.Type && featuredProject.Aantalvantype && (
-              <div
-                style={{
-                  background: 'rgba(255, 255, 255, 0.2)',
-                  color: 'white',
-                  padding: '8px 16px',
-                  borderRadius: '20px',
-                  fontSize: 16,
-                  fontWeight: 'bold',
-                  backdropFilter: 'blur(10px)',
-                }}
-              >
-                {featuredProject.Aantalvantype} {featuredProject.Type}
-              </div>
-            )}
-          </div>
-          
-          {/* Cellna branding */}
-          <div
-            style={{
-              fontSize: 20,
-              fontWeight: 'bold',
-              opacity: 0.9,
-            }}
-          >
-            CELLNA - Vastgoed & Projectontwikkeling
-          </div>
+          {featuredProject.Naam}
         </div>
       ),
       { ...size }

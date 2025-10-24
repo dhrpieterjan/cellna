@@ -47,103 +47,20 @@ export default async function Image({
       (
         <div
           style={{
-            width: '100%',
-            height: '100%',
+            fontSize: 64,
             background: `linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%), url(${projectImageUrl})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            width: '100%',
+            height: '100%',
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-end',
+            alignItems: 'flex-end',
+            justifyContent: 'flex-start',
             padding: '60px',
             color: 'white',
           }}
         >
-          {/* Project name - matches the h1 styling */}
-          <div
-            style={{
-              fontSize: 64,
-              fontWeight: 'bold',
-              marginBottom: 24,
-              lineHeight: 1.1,
-              maxWidth: '90%',
-            }}
-          >
-            {project.Naam}
-          </div>
-          
-          {/* Tags row - matches the actual header design */}
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '12px',
-              marginBottom: 16,
-            }}
-          >
-            {project.Aantalverkocht > 0 && (
-              <div
-                style={{
-                  background: 'rgba(239, 68, 68, 1)',
-                  color: 'white',
-                  padding: '8px 16px',
-                  borderRadius: '20px',
-                  fontSize: 16,
-                  fontWeight: 'bold',
-                }}
-              >
-                {project.Aantalverkocht} verkocht
-              </div>
-            )}
-            {project.Fase && (
-              <div
-                style={{
-                  background: 'rgba(255, 255, 255, 0.2)',
-                  color: 'white',
-                  padding: '8px 16px',
-                  borderRadius: '20px',
-                  fontSize: 16,
-                  fontWeight: 'bold',
-                  backdropFilter: 'blur(10px)',
-                }}
-              >
-                {project.Fase}
-              </div>
-            )}
-            {project.Locatie && (
-              <div
-                style={{
-                  background: 'rgba(255, 255, 255, 0.2)',
-                  color: 'white',
-                  padding: '8px 16px',
-                  borderRadius: '20px',
-                  fontSize: 16,
-                  fontWeight: 'bold',
-                  backdropFilter: 'blur(10px)',
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-              >
-                📍 {project.Locatie}
-              </div>
-            )}
-            {project.Type && project.Aantalvantype && (
-              <div
-                style={{
-                  background: 'rgba(255, 255, 255, 0.2)',
-                  color: 'white',
-                  padding: '8px 16px',
-                  borderRadius: '20px',
-                  fontSize: 16,
-                  fontWeight: 'bold',
-                  backdropFilter: 'blur(10px)',
-                }}
-              >
-                {project.Aantalvantype} {project.Type}
-              </div>
-            )}
-          </div>
+          {project.Naam}
         </div>
       ),
       { ...size }
