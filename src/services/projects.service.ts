@@ -3,40 +3,22 @@ import {
   GET_PROJECT_DETAIL_QUERY,
   GET_ALL_PROJECT_IDS_QUERY,
 } from "@/lib/queries-strings";
-import { ProjectDetailData } from "@/lib/types";
+import { Project } from "@/payload-types";
+import { PayloadService } from "./payload.service";
 
 export class ProjectsService {
   /**
    * Get detailed information for a specific project
    */
-  static async getProjectById(id: string): Promise<ProjectDetailData | null> {
-    try {
-      const data = await fetchGraphQL<ProjectDetailData>(
-        GET_PROJECT_DETAIL_QUERY,
-        { id }
-      );
-      return data;
-    } catch (error) {
-      console.error("Error fetching project data:", error);
-      return null;
-    }
+  static async getProjectById(id: string): Promise<Project | undefined> {
+    return await PayloadService.getProjectById(id);
   }
 
   /**
    * Get all project IDs for static generation
    */
   static async getAllProjectIds(): Promise<{ id: string }[]> {
-    try {
-      const data = await fetchGraphQL<{ projects: { id: string }[] }>(
-        GET_ALL_PROJECT_IDS_QUERY
-      );
-      return data.projects.map((project) => ({
-        id: project.id,
-      }));
-    } catch (error) {
-      console.error("Error generating static params:", error);
-      return [];
-    }
+    return await PayloadService.getAllProjectIds();
   }
 
   /**
@@ -45,17 +27,17 @@ export class ProjectsService {
   static async getProjectMetadata(id: string) {
     const data = await this.getProjectById(id);
 
-    if (!data?.project) {
+    if (!data) {
       return {
         title: "Project niet gevonden - Cellna",
       };
     }
 
     return {
-      title: `${data.project.Naam} - Cellna`,
-      description: data.project.Projectomschrijving
-        ? data.project.Projectomschrijving.substring(0, 160)
-        : `Bekijk details van ${data.project.Naam} project bij Cellna`,
+      title: `${data.Naam} - Cellna`,
+      description: data.Projectomschrijving
+        ? data.Projectomschrijving.substring(0, 160)
+        : `Bekijk details van ${data.Naam} project bij Cellna`,
     };
   }
 }

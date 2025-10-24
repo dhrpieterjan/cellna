@@ -1,4 +1,7 @@
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
+import { withPayload } from "@payloadcms/next/withPayload";
+import withBundleAnalyzer from "@next/bundle-analyzer";
+
+const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
@@ -6,7 +9,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const nextConfig = {
   // Explicitly set the root directory to avoid confusion with parent directory
   turbopack: {
-    root: __dirname,
+    root: process.cwd(),
   },
   images: {
     remotePatterns: [
@@ -35,4 +38,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(nextConfig);
+export default withPayload(bundleAnalyzer(nextConfig));

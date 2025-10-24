@@ -94,7 +94,7 @@ export async function submitProjectInquiry(inquiryData: ProjectInquiryData) {
     // Verify project exists
     const projectData = await ProjectsService.getProjectById(inquiryData.projectId);
 
-    if (!projectData || !projectData.project) {
+    if (!projectData) {
       return {
         success: false,
         error: "Project niet gevonden.",
@@ -114,7 +114,7 @@ export async function submitProjectInquiry(inquiryData: ProjectInquiryData) {
     return {
       success: true,
       message: `Uw interesse voor ${
-        projectData.project?.Naam || "dit project"
+        projectData?.Naam || "dit project"
       } is geregistreerd. We nemen zo snel mogelijk contact met u op.`,
     };
   } catch (error) {

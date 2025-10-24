@@ -1,6 +1,6 @@
 import Container from '@/components/ui/Container';
 import ProjectCard from './ProjectCard';
-import { Project } from '@/lib/types';
+import { Project } from '@/payload-types';
 
 interface ProjectGridProps {
   projects: Project[];
@@ -10,7 +10,7 @@ const ProjectGrid = ({ projects }: ProjectGridProps) => {
   if (!projects || projects.length === 0) {
     return (
       <Container>
-        <div className="text-center py-12">
+        <div className="py-12 text-center">
           <p className="text-gray-600">Geen projecten beschikbaar.</p>
         </div>
       </Container>
@@ -25,8 +25,8 @@ const ProjectGrid = ({ projects }: ProjectGridProps) => {
         </h2>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {projects.filter((project) => project.Actief).map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>

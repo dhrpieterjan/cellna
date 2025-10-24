@@ -1,41 +1,37 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Project } from '@/lib/types';
+import { Project } from '@/payload-types';
+import { getMediaUrl } from '@/lib/utils';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const imageUrl = `https://api.cellna.be${project.Hoofdfoto.url}`;
+  const imageUrl = getMediaUrl(project.Hoofdfoto);
   
   return (
     <Link 
       href={`/project/${project.id}`}
-      className="group block rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-white hover:-translate-y-3 border border-gray-100"
+      className="block overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-xl transition-all duration-500 group hover:shadow-2xl hover:-translate-y-3"
     >
       <div className="relative">
         {/* Hero Image Section - like project header */}
-        <div className="relative h-64 bg-gray-200 overflow-hidden">
+        <div className="overflow-hidden relative h-64 bg-gray-200">
           <Image
             src={imageUrl}
             alt={project.Naam}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
           
           {/* Gradient overlay - matches project header */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/20"></div>
           
           {/* Tags overlay - like project header */}
-          <div className="absolute bottom-4 left-4 right-4">
+          <div className="absolute right-4 bottom-4 left-4">
             <div className="flex flex-wrap gap-2 items-center">
-              {project.Aantalverkocht > 0 && (
-                <div className="inline-flex items-center px-3 py-1.5 text-xs text-white bg-red-500 rounded-full font-brandon-medium">
-                  {project.Aantalverkocht} verkocht
-                </div>
-              )}
               {project.Fase && (
                 <div className="inline-flex items-center px-3 py-1.5 text-xs text-white rounded-full backdrop-blur-sm bg-white/20 font-brandon-medium">
                   {project.Fase}
@@ -52,13 +48,13 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         
         {/* Content Section */}
         <div className="p-6">
-          <h3 className="text-2xl font-brandon-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300 leading-tight">
+          <h3 className="mb-4 text-2xl leading-tight text-gray-900 transition-colors duration-300 font-brandon-bold group-hover:text-primary-600">
             {project.Naam}
           </h3>
           
           {/* Price highlight */}
           {project.Prijs && (
-            <div className="mb-4 p-4 bg-primary-50 rounded-xl border border-primary-100">
+            <div className="p-4 mb-4 rounded-xl border bg-primary-50 border-primary-100">
               <div className="flex items-center space-x-2">
                 <div className="flex-shrink-0 w-5 h-5">
                   <Image
@@ -98,12 +94,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
           
           {/* Call to action */}
-          <div className="mt-6 pt-4 border-t border-gray-100">
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-brandon-medium text-primary-600 group-hover:text-primary-700 transition-colors">
+          <div className="pt-4 mt-6 border-t border-gray-100">
+            <div className="flex justify-between items-center">
+              <span className="text-sm transition-colors font-brandon-medium text-primary-600 group-hover:text-primary-700">
                 Bekijk project
               </span>
-              <svg className="w-5 h-5 text-primary-600 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 transition-transform duration-300 text-primary-600 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </div>
