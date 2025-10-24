@@ -8,6 +8,13 @@ export const getMediaUrl = (
   media: Media | string | null | undefined
 ): string => {
   if (!media) {
+    // For production, use Vercel URL for fallback image
+    if (process.env.VERCEL_URL) {
+      return `https://${process.env.VERCEL_URL}/imagedummy.png`;
+    }
+    if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+      return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/imagedummy.png`;
+    }
     return "/imagedummy.png";
   }
 
@@ -28,8 +35,12 @@ export const getMediaUrl = (
     return media.url ?? "/imagedummy.png"; // Use relative URL like "/api/media/file/..."
   }
 
-  // For production, construct full URL
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+  // For production, use Vercel URL or fallback to NEXT_PUBLIC_API_URL
+  const baseUrl = process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}`
+    : process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
   return `${baseUrl}${media.url}`;
 };
 
