@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { MainService } from '@/services/main.service';
 import Layout from '@/components/layout/Layout';
 import Container from '@/components/ui/Container';
@@ -6,6 +7,43 @@ import ProjectGrid from '@/components/projects/ProjectGrid';
 import AboutUs from '@/components/sections/AboutUs';
 import Investment from '@/components/sections/Investment';
 import PhotoGallery from '@/components/sections/PhotoGallery';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await MainService.getHomepageData();
+  const projects = data.projects;
+  
+  // Get the first project's image for the main OG image
+  const featuredProject = projects.find(project => project.Hoofdfoto?.url);
+  const ogImage = featuredProject 
+    ? `https://api.cellna.be${featuredProject.Hoofdfoto.url}`
+    : '/logo.png';
+
+  return {
+    title: 'Cellna - Vastgoed & Projectontwikkeling',
+    description: 'Cellna is uw partner voor vastgoedinvesteringen en projectontwikkeling. Ontdek onze projecten en investeringsmogelijkheden.',
+    openGraph: {
+      title: 'Cellna - Vastgoed & Projectontwikkeling',
+      description: 'Uw partner voor vastgoedinvesteringen en projectontwikkeling. Ontdek onze projecten en investeringsmogelijkheden.',
+      type: 'website',
+      locale: 'nl_BE',
+      siteName: 'Cellna',
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: featuredProject ? `Project: ${featuredProject.Naam}` : 'Cellna Logo',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Cellna - Vastgoed & Projectontwikkeling',
+      description: 'Uw partner voor vastgoedinvesteringen en projectontwikkeling',
+      images: [ogImage],
+    },
+  };
+}
 
 export default async function HomePage() {
   const data = await MainService.getHomepageData();

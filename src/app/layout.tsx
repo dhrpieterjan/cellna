@@ -26,20 +26,11 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'nl_BE',
     siteName: 'Cellna',
-    images: [
-      {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Cellna Logo',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cellna - Vastgoed & Projectontwikkeling',
     description: 'Uw partner voor vastgoedinvesteringen en projectontwikkeling',
-    images: ['/logo.png'],
   },
   robots: {
     index: true,
