@@ -77,6 +77,8 @@ export default async function Image({
               padding: '60px',
               color: 'white',
               width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
             }}
           >
             {/* Project name */}
