@@ -92,7 +92,9 @@ export async function submitProjectInquiry(inquiryData: ProjectInquiryData) {
     }
 
     // Verify project exists
-    const projectData = await ProjectsService.getProjectById(inquiryData.projectId);
+    const projectData = await ProjectsService.getProjectById(
+      inquiryData.projectId
+    );
 
     if (!projectData) {
       return {
