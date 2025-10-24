@@ -28,38 +28,12 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   const project = data.project;
-  const imageUrl = `https://api.cellna.be${project.Hoofdfoto.url}`;
 
   return {
     title: project.Naam,
     description: project.Projectomschrijving 
       ? project.Projectomschrijving.replace(/<[^>]*>/g, '').substring(0, 160) + '...'
       : `Ontdek ${project.Naam} - ${project.Locatie || 'Nieuwe projectontwikkeling'}`,
-    openGraph: {
-      title: project.Naam,
-      description: project.Projectomschrijving 
-        ? project.Projectomschrijving.replace(/<[^>]*>/g, '').substring(0, 160) + '...'
-        : `Ontdek ${project.Naam} - ${project.Locatie || 'Nieuwe projectontwikkeling'}`,
-      type: 'website',
-      locale: 'nl_BE',
-      siteName: 'Cellna',
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: `Project: ${project.Naam}`,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: project.Naam,
-      description: project.Projectomschrijving 
-        ? project.Projectomschrijving.replace(/<[^>]*>/g, '').substring(0, 160) + '...'
-        : `Ontdek ${project.Naam} - ${project.Locatie || 'Nieuwe projectontwikkeling'}`,
-      images: [imageUrl],
-    },
   };
 }
 

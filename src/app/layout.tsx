@@ -63,7 +63,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl">
-      <body className="font-brandon antialiased">
+      <body className="antialiased font-brandon">
         {children}
       </body>
     </html>
