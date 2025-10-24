@@ -68,38 +68,23 @@ export default async function Image() {
           style={{
             width: '100%',
             height: '100%',
+            background: `linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%), url(${projectImageUrl})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-end',
             justifyContent: 'flex-end',
-            backgroundImage: `url(${projectImageUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
             padding: '60px',
             color: 'white',
-            position: 'relative',
           }}
         >
-          {/* Gradient overlay */}
-          <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%)',
-            }}
-          />
-          
           <div
             style={{
               fontSize: 24,
               fontWeight: 'bold',
               marginBottom: 8,
               opacity: 0.9,
-              position: 'relative',
-              zIndex: 1,
             }}
           >
             CELLNA
@@ -110,8 +95,6 @@ export default async function Image() {
               fontWeight: 'bold',
               marginBottom: 16,
               lineHeight: 1.2,
-              position: 'relative',
-              zIndex: 1,
             }}
           >
             {featuredProject.Naam}
@@ -121,8 +104,6 @@ export default async function Image() {
               fontSize: 28,
               opacity: 0.9,
               maxWidth: '80%',
-              position: 'relative',
-              zIndex: 1,
             }}
           >
             Vastgoed & Projectontwikkeling
