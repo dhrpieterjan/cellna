@@ -47,20 +47,44 @@ export default async function Image({
       (
         <div
           style={{
-            fontSize: 64,
-            background: `linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%), url(${projectImageUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
             width: '100%',
             height: '100%',
+            backgroundImage: `url(${projectImageUrl})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             display: 'flex',
             alignItems: 'flex-end',
             justifyContent: 'flex-start',
             padding: '60px',
             color: 'white',
+            position: 'relative',
+            fontFamily: 'system-ui',
           }}
         >
-          {project.Naam}
+          {/* Gradient overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%)',
+            }}
+          />
+          
+          {/* Project name */}
+          <div
+            style={{
+              fontSize: 64,
+              fontWeight: 'bold',
+              position: 'relative',
+              zIndex: 1,
+              fontFamily: 'system-ui',
+            }}
+          >
+            {project.Naam}
+          </div>
         </div>
       ),
       { ...size }
