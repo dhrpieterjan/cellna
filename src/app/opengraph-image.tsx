@@ -66,14 +66,18 @@ export default async function Image() {
       (
         <div
           style={{
-            position: 'relative',
             width: '100%',
             height: '100%',
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'flex-end',
+            justifyContent: 'flex-end',
             backgroundImage: `url(${projectImageUrl})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            padding: '60px',
+            color: 'white',
+            position: 'relative',
           }}
         >
           {/* Gradient overlay */}
@@ -88,47 +92,40 @@ export default async function Image() {
             }}
           />
           
-          {/* Content */}
           <div
             style={{
+              fontSize: 24,
+              fontWeight: 'bold',
+              marginBottom: 8,
+              opacity: 0.9,
               position: 'relative',
               zIndex: 1,
-              padding: '60px',
-              color: 'white',
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'column',
             }}
           >
-            <div
-              style={{
-                fontSize: 24,
-                fontWeight: 'bold',
-                marginBottom: 8,
-                opacity: 0.9,
-              }}
-            >
-              CELLNA
-            </div>
-            <div
-              style={{
-                fontSize: 48,
-                fontWeight: 'bold',
-                marginBottom: 16,
-                lineHeight: 1.2,
-              }}
-            >
-              {featuredProject.Naam}
-            </div>
-            <div
-              style={{
-                fontSize: 28,
-                opacity: 0.9,
-                maxWidth: '80%',
-              }}
-            >
-              Vastgoed & Projectontwikkeling
-            </div>
+            CELLNA
+          </div>
+          <div
+            style={{
+              fontSize: 48,
+              fontWeight: 'bold',
+              marginBottom: 16,
+              lineHeight: 1.2,
+              position: 'relative',
+              zIndex: 1,
+            }}
+          >
+            {featuredProject.Naam}
+          </div>
+          <div
+            style={{
+              fontSize: 28,
+              opacity: 0.9,
+              maxWidth: '80%',
+              position: 'relative',
+              zIndex: 1,
+            }}
+          >
+            Vastgoed & Projectontwikkeling
           </div>
         </div>
       ),

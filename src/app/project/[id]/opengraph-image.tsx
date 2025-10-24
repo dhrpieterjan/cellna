@@ -47,14 +47,18 @@ export default async function Image({
       (
         <div
           style={{
-            position: 'relative',
             width: '100%',
             height: '100%',
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'flex-end',
+            justifyContent: 'flex-end',
             backgroundImage: `url(${projectImageUrl})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            padding: '60px',
+            color: 'white',
+            position: 'relative',
           }}
         >
           {/* Gradient overlay */}
@@ -69,111 +73,101 @@ export default async function Image({
             }}
           />
           
-          {/* Content */}
+          {/* Project name */}
           <div
             style={{
+              fontSize: 56,
+              fontWeight: 'bold',
+              marginBottom: 16,
+              lineHeight: 1.1,
+              maxWidth: '90%',
               position: 'relative',
               zIndex: 1,
-              padding: '60px',
-              color: 'white',
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'column',
             }}
           >
-            {/* Project name */}
-            <div
-              style={{
-                fontSize: 56,
-                fontWeight: 'bold',
-                marginBottom: 16,
-                lineHeight: 1.1,
-                maxWidth: '90%',
-              }}
-            >
-              {project.Naam}
-            </div>
-            
-            {/* Tags row */}
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '12px',
-                marginBottom: 16,
-              }}
-            >
-              {project.Aantalverkocht > 0 && (
-                <div
-                  style={{
-                    background: 'rgba(239, 68, 68, 0.9)',
-                    color: 'white',
-                    padding: '8px 16px',
-                    borderRadius: '20px',
-                    fontSize: 18,
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {project.Aantalverkocht} verkocht
-                </div>
-              )}
-              {project.Fase && (
-                <div
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.2)',
-                    color: 'white',
-                    padding: '8px 16px',
-                    borderRadius: '20px',
-                    fontSize: 18,
-                    fontWeight: 'bold',
-                    backdropFilter: 'blur(10px)',
-                  }}
-                >
-                  {project.Fase}
-                </div>
-              )}
-              {project.Locatie && (
-                <div
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.2)',
-                    color: 'white',
-                    padding: '8px 16px',
-                    borderRadius: '20px',
-                    fontSize: 18,
-                    fontWeight: 'bold',
-                    backdropFilter: 'blur(10px)',
-                  }}
-                >
-                  📍 {project.Locatie}
-                </div>
-              )}
-              {project.Type && project.Aantalvantype && (
-                <div
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.2)',
-                    color: 'white',
-                    padding: '8px 16px',
-                    borderRadius: '20px',
-                    fontSize: 18,
-                    fontWeight: 'bold',
-                    backdropFilter: 'blur(10px)',
-                  }}
-                >
-                  {project.Aantalvantype} {project.Type}
-                </div>
-              )}
-            </div>
-            
-            {/* Cellna branding */}
-            <div
-              style={{
-                fontSize: 24,
-                fontWeight: 'bold',
-                opacity: 0.9,
-              }}
-            >
-              CELLNA
-            </div>
+            {project.Naam}
+          </div>
+          
+          {/* Tags row */}
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '12px',
+              marginBottom: 16,
+              position: 'relative',
+              zIndex: 1,
+            }}
+          >
+            {project.Aantalverkocht > 0 && (
+              <div
+                style={{
+                  background: 'rgba(239, 68, 68, 0.9)',
+                  color: 'white',
+                  padding: '8px 16px',
+                  borderRadius: '20px',
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}
+              >
+                {project.Aantalverkocht} verkocht
+              </div>
+            )}
+            {project.Fase && (
+              <div
+                style={{
+                  background: 'rgba(255, 255, 255, 0.2)',
+                  color: 'white',
+                  padding: '8px 16px',
+                  borderRadius: '20px',
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}
+              >
+                {project.Fase}
+              </div>
+            )}
+            {project.Locatie && (
+              <div
+                style={{
+                  background: 'rgba(255, 255, 255, 0.2)',
+                  color: 'white',
+                  padding: '8px 16px',
+                  borderRadius: '20px',
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}
+              >
+                📍 {project.Locatie}
+              </div>
+            )}
+            {project.Type && project.Aantalvantype && (
+              <div
+                style={{
+                  background: 'rgba(255, 255, 255, 0.2)',
+                  color: 'white',
+                  padding: '8px 16px',
+                  borderRadius: '20px',
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}
+              >
+                {project.Aantalvantype} {project.Type}
+              </div>
+            )}
+          </div>
+          
+          {/* Cellna branding */}
+          <div
+            style={{
+              fontSize: 24,
+              fontWeight: 'bold',
+              opacity: 0.9,
+              position: 'relative',
+              zIndex: 1,
+            }}
+          >
+            CELLNA
           </div>
         </div>
       ),
