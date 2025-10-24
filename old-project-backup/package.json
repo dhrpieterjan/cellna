@@ -1,0 +1,30 @@
+{
+    "name": "project_cellna",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "next",
+        "build": "next build",
+        "start": "next start"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@zeit/next-sass": "^1.0.1",
+        "apollo-boost": "^0.4.4",
+        "emailjs-com": "^2.6.3",
+        "graphql": "^14.5.8",
+        "next": "^9.0.6",
+        "next-with-apollo": "^4.3.0",
+        "node-sass": "^4.12.0",
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "react-html-parser": "^2.0.2",
+        "react-image-gallery": "^0.9.1",
+        "react-json-table": "^0.1.1",
+        "react-map-gl": "^5.1.4",
+        "react-scroll": "^1.7.14"
+    }
+}

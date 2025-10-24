@@ -1,0 +1,74 @@
+@import 'mapbox-gl/dist/mapbox-gl.css';
+@import 'react-photo-view/dist/react-photo-view.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'BrandonGrotesque_Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Brandon Grotesque Regular'), url('/fonts/Brandon_reg.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BrandonGrotesque_Regular_Italic';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Brandon Grotesque Regular Italic'), url('/fonts/Brandon_reg_it.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BrandonGrotesque_Thin';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Brandon Grotesque Thin'), url('/fonts/Brandon_thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BrandonGrotesque_Bold';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Brandon Grotesque Bold'), url('/fonts/Brandon_bld.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BrandonGrotesque_Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Brandon Grotesque Medium'), url('/fonts/Brandon_med.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BrandonGrotesque_Black';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Brandon Grotesque Black'), url('/fonts/Brandon_blk.woff') format('woff');
+}
+
+@layer base {
+  html {
+    font-family: 'BrandonGrotesque_Regular', system-ui, sans-serif;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .container-section {
+    @apply w-full px-4 sm:px-6 lg:px-8;
+  }
+  
+  .semi-container {
+    @apply max-w-7xl mx-auto;
+  }
+}
