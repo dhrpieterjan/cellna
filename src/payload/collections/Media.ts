@@ -6,7 +6,6 @@ export const Media: CollectionConfig = {
     read: () => true, // Allow public read access to media files
   },
   upload: {
-    staticDir: "media",
     imageSizes: [
       {
         name: "thumbnail",
