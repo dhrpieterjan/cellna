@@ -36,7 +36,7 @@ export const getMediaUrl = (
   }
 
   // For production, use Vercel URL or fallback to NEXT_PUBLIC_API_URL
-  const baseUrl = process.env.VERCEL_URL 
+  const baseUrl = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
     : process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`

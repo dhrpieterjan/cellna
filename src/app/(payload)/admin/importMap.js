@@ -1,14 +1,5 @@
+import { VercelBlobClientUploadHandler as VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e } from '@payloadcms/storage-vercel-blob/client'
+
 export const importMap = {
-  "@payloadcms/richtext-lexical/rsc#RscEntryLexicalField": {
-    path: "@payloadcms/richtext-lexical/rsc#RscEntryLexicalField",
-    serverProps: { admin: true },
-  },
-  "@payloadcms/richtext-lexical/rsc#RscEntryLexicalFieldClient": {
-    path: "@payloadcms/richtext-lexical/rsc#RscEntryLexicalFieldClient",
-    serverProps: { admin: true },
-  },
-  "@payloadcms/richtext-lexical/rsc#RscEntryLexicalFieldServer": {
-    path: "@payloadcms/richtext-lexical/rsc#RscEntryLexicalFieldServer",
-    serverProps: { admin: true },
-  },
-};
+  "@payloadcms/storage-vercel-blob/client#VercelBlobClientUploadHandler": VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e
+}
