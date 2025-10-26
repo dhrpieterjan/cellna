@@ -13,7 +13,10 @@ interface PhotoGalleryProps {
 }
 
 const PhotoGallery = ({ photos }: PhotoGalleryProps) => {
-  
+  if (!photos || photos.length === 0) {
+    return null;
+  }
+
   return (
     <section id="fotos" className="py-16">
       <div className="px-6 mx-auto max-w-6xl">

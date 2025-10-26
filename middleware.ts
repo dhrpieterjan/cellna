@@ -1,20 +1,20 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   // Handle image optimization requests
-  if (request.nextUrl.pathname.startsWith('/_next/image')) {
+  if (request.nextUrl.pathname.startsWith("/_next/image")) {
     // Allow image optimization requests to pass through
-    return NextResponse.next()
+    return NextResponse.next();
   }
 
   // Handle media file requests
-  if (request.nextUrl.pathname.startsWith('/api/media/file')) {
+  if (request.nextUrl.pathname.startsWith("/api/media/file")) {
     // Allow media file requests to pass through
-    return NextResponse.next()
+    return NextResponse.next();
   }
 
-  return NextResponse.next()
+  return NextResponse.next();
 }
 
 export const config = {
@@ -26,6 +26,6 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
   ],
-}
+};
